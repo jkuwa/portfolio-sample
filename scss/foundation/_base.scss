@@ -1,0 +1,47 @@
+@use "variables" as v;
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  min-width: 320px;
+  width: 100%;
+  margin: 0;
+  color: v.$font-color;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 1.6rem;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+a:hover,
+button:hover {
+  opacity: .7;
+}
+
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.roboto-bold {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.homemade-apple-regular {
+  font-family: "Homemade Apple", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
