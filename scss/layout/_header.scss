@@ -1,0 +1,11 @@
+@use "../foundation/mixin" as m;
+
+.l-header {
+  height: 160px;
+  display: flex;
+  align-items: center;
+
+  @include m.breakpoint(pc) {
+    height: 80px;
+  }
+}
