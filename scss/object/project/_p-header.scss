@@ -33,14 +33,12 @@
       font-style: normal;
       opacity: 1;
       pointer-events: auto;
-      transform: none;      
-      transition: opacity .6s, transform .6s;
+      transition: opacity .6s;
 
       @include m.breakpoint(pc) {
         position: absolute;
         opacity: 0;
         pointer-events: none;
-        transform: translateY(-100%);
       }
     }
 
@@ -49,13 +47,11 @@
       font-weight: 700;
       opacity: 0;
       pointer-events: none;
-      transform: translateY(-100%);
-      transition: opacity .6s, transform .6s;
+      transition: opacity .6s;
 
       @include m.breakpoint(pc) {
         opacity: 1;
         pointer-events: auto;
-        transform: none;
       }
     }
   }

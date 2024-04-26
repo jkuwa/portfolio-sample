@@ -95,15 +95,13 @@ ul {
   font-style: normal;
   opacity: 1;
   pointer-events: auto;
-  transform: none;
-  transition: opacity 0.6s, transform 0.6s;
+  transition: opacity 0.6s;
 }
 @media (min-width: 960px) {
   .p-header__title .p-title {
     position: absolute;
     opacity: 0;
     pointer-events: none;
-    transform: translateY(-100%);
   }
 }
 .p-header__title .p-title--pc {
@@ -111,14 +109,12 @@ ul {
   font-weight: 700;
   opacity: 0;
   pointer-events: none;
-  transform: translateY(-100%);
-  transition: opacity 0.6s, transform 0.6s;
+  transition: opacity 0.6s;
 }
 @media (min-width: 960px) {
   .p-header__title .p-title--pc {
     opacity: 1;
     pointer-events: auto;
-    transform: none;
   }
 }
 .p-header .p-hamburgerBtn {
