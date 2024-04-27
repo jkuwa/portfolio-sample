@@ -8,6 +8,9 @@
 // layout
 @use "layout/header";
 
-// object/project
+// object
+// --- project ---
 @use "object/project/p-header";
+@use "object/project/p-nav";
+@use "object/project/p-hamburgerBtn";
 

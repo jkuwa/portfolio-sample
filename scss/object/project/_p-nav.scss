@@ -1,0 +1,92 @@
+@use "../../foundation/mixin" as m;
+@use "../../foundation/variables" as v;
+
+.p-nav {
+  padding: 171px 0 147px;
+  background: v.$sub-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 160px;
+  bottom: 0;
+  right: -100%;
+  left: 100%;
+  overflow-x: hidden;
+  transition: all .3s;
+
+  @include m.breakpoint(pc) {
+    // display: inline-block;
+    padding: 0;
+    flex-direction: row;
+    background: inherit;
+    position: static;
+  }
+
+  &__list {
+    // margin: 151px 0 147px;
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    white-space: nowrap;
+
+    @include m.breakpoint(pc) {
+      // margin: 0;
+      flex-direction: row;
+    }
+
+    li:not(:first-child) {
+      margin-top: 40px;
+
+      @include m.breakpoint(pc) {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__item {
+    // padding: 20px;
+    display: inline-block;
+    color: v.$black-color;
+    font-size: 2.4rem;
+    font-weight: 700;
+    // text-align: center;
+
+    @include m.breakpoint(pc) {
+      padding: 28px 20px;
+      font-size: 1.6rem;
+      font-weight: 400;
+
+      &:hover {
+        background: rgba(0 0 0 /.1);
+      }
+    }
+
+    // &.-last {
+    //   @include m.breakpoint(pc) {
+    //     padding-right: 40px;
+    //   }
+    // }
+  }
+
+  &__inquiry {
+    margin-top: 80px;
+    padding: 16px 23px;
+    background: v.$main-color;
+    color: v.$white-color;
+    font-size: 2.4rem;
+    font-weight: 700;
+
+    @include m.breakpoint(pc) {
+      margin: 0 0 0 20px;
+      padding: 28px 12px;
+      font-size: 1.6rem;
+    }
+  }
+
+  &.is-open {
+    right: 0;
+    left: 0;
+    overflow-y: auto;
+  }
+}
