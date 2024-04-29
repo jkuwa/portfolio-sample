@@ -2,6 +2,41 @@
 @use "../../foundation/variables" as v;
 @use "sass:math";
 
-  .slick-prev {
+  .slick-arrow {
+    width: 21.5px;
+    height: 43px;
+    position: absolute;
+    top: 35%;
     z-index: 5;
+    font-size: 0;
+
+    &::before {
+      content: "";
+      width: 30px;
+      height: 30px;
+      border-top: 2px solid v.$white-color;
+      border-right: 2px solid v.$white-color;
+      display: inline-block;
+      position: absolute;
+      top: calc(50% - 15px);
+      // vertical-align: middle;
+    }
+
+    &.slick-prev {
+      left: 7%;
+
+      &::before {
+        transform: rotate(-135deg);
+        left: calc(21.5px - 15px);
+      }
+    }
+
+    &.slick-next {
+      right: 7%;
+
+      &::before {
+        transform: rotate(45deg);
+        right: calc(21.5px - 15px);
+      }
+    }
   }

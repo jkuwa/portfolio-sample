@@ -280,7 +280,36 @@ ul {
   background-image: url(../../../images/mv_03.jpg);
 }
 
-.slick-prev {
+.slick-arrow {
+  width: 21.5px;
+  height: 43px;
+  position: absolute;
+  top: 35%;
   z-index: 5;
+  font-size: 0;
+}
+.slick-arrow::before {
+  content: "";
+  width: 30px;
+  height: 30px;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+  display: inline-block;
+  position: absolute;
+  top: calc(50% - 15px);
+}
+.slick-arrow.slick-prev {
+  left: 7%;
+}
+.slick-arrow.slick-prev::before {
+  transform: rotate(-135deg);
+  left: 6.5px;
+}
+.slick-arrow.slick-next {
+  right: 7%;
+}
+.slick-arrow.slick-next::before {
+  transform: rotate(45deg);
+  right: 6.5px;
 }
 /*# sourceMappingURL=style.css.map */
