@@ -12,26 +12,24 @@
   bottom: 0;
   right: -100%;
   left: 100%;
+  z-index: 10;
   overflow-x: hidden;
   transition: all .3s;
 
   @include m.breakpoint(pc) {
-    // display: inline-block;
     padding: 0;
     flex-direction: row;
     background: inherit;
     position: static;
+    transition: unset;
   }
 
   &__list {
-    // margin: 151px 0 147px;
     display: flex;
     flex-direction: column;
-    // align-items: center;
     white-space: nowrap;
 
     @include m.breakpoint(pc) {
-      // margin: 0;
       flex-direction: row;
     }
 
@@ -45,12 +43,10 @@
   }
 
   &__item {
-    // padding: 20px;
     display: inline-block;
     color: v.$black-color;
     font-size: 2.4rem;
     font-weight: 700;
-    // text-align: center;
 
     @include m.breakpoint(pc) {
       padding: 28px 20px;
@@ -61,12 +57,6 @@
         background: rgba(0 0 0 /.1);
       }
     }
-
-    // &.-last {
-    //   @include m.breakpoint(pc) {
-    //     padding-right: 40px;
-    //   }
-    // }
   }
 
   &__inquiry {
