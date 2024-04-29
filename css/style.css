@@ -6,6 +6,7 @@ body {
   min-width: 320px;
   width: 100%;
   margin: 0;
+  box-sizing: border-box;
   color: #222222;
   font-family: "Noto Sans JP", sans-serif;
   font-size: 1.6rem;
@@ -129,6 +130,7 @@ ul {
   bottom: 0;
   right: -100%;
   left: 100%;
+  z-index: 10;
   overflow-x: hidden;
   transition: all 0.3s;
 }
@@ -138,6 +140,7 @@ ul {
     flex-direction: row;
     background: inherit;
     position: static;
+    transition: unset;
   }
 }
 .p-nav__list {
@@ -239,5 +242,45 @@ ul {
 }
 .p-hamburgerBtn.is-open > span {
   background: none;
+}
+
+.p-main__mv--slider {
+  position: relative;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.p-main__mv--slider.slick-initialized {
+  opacity: 1;
+}
+
+.p-mv {
+  width: 100%;
+  height: 66.6vw;
+  background-color: #E48484;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.p-mv::before {
+  content: "";
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.p-mv.-first {
+  background-image: url(../../../images/mv_01.jpg);
+}
+.p-mv.-second {
+  background-image: url(../../../images/mv_02.jpg);
+}
+.p-mv.-third {
+  background-image: url(../../../images/mv_03.jpg);
+}
+
+.slick-prev {
+  z-index: 5;
 }
 /*# sourceMappingURL=style.css.map */

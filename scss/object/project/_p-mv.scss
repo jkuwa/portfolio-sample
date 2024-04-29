@@ -1,0 +1,43 @@
+@use "../../foundation/mixin" as m;
+@use "../../foundation/variables" as v;
+@use "sass:math";
+
+.p-main__mv--slider {
+  position: relative;
+  opacity: 0;
+  transition: opacity .5s;
+
+  &.slick-initialized {
+    opacity: 1;
+  }
+}
+
+.p-mv {
+  width: 100%;
+  height: 66.6vw;
+  background-color: v.$main-color;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+
+
+  &::before {
+    content: "";
+    background: rgba(0 0 0 /.7);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  &.-first {
+    background-image: url(../../../images/mv_01.jpg);
+  }
+  &.-second {
+    background-image: url(../../../images/mv_02.jpg);
+  }
+  &.-third {
+    background-image: url(../../../images/mv_03.jpg);
+  }
+}
