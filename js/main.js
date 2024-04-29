@@ -22,4 +22,8 @@ $(function() {
       $(".js-hamburgerBar").text('メニューを開く');
     }
   });
+
+  $('.p-main__mv--slider').slick({
+    dots: true,  
+  });
 });
