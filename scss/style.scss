@@ -1,16 +1,18 @@
 
-// foundation
+// --- foundation ---
 @use "foundation/base";
 @use "foundation/mixin";
 @use "foundation/reset";
 @use "foundation/variables";
 
-// layout
+// --- layout ---
 @use "layout/header";
 
-// object
-// --- project ---
+// --- object ---
+// project
 @use "object/project/p-header";
 @use "object/project/p-nav";
 @use "object/project/p-hamburgerBtn";
+@use "object/project/p-mv";
+@use "object/project/p-slick";
 
