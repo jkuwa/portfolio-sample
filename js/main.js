@@ -23,7 +23,7 @@ $(function() {
     }
   });
 
-  $('.p-main__mv--slider').slick({
+  $('.p-mv__slider').slick({
     dots: true,  
   });
 });

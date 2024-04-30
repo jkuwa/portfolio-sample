@@ -2,41 +2,80 @@
 @use "../../foundation/variables" as v;
 @use "sass:math";
 
-  .slick-arrow {
-    width: 21.5px;
-    height: 43px;
+.slick-arrow {
+  width: 21.5px;
+  height: 43px;
+  position: absolute;
+  top: 35%;
+  z-index: 5;
+  font-size: 0;
+
+  &::before {
+    content: "";
+    width: 30px;
+    height: 30px;
+    border-top: 2px solid v.$white-color;
+    border-right: 2px solid v.$white-color;
+    display: inline-block;
     position: absolute;
-    top: 35%;
-    z-index: 5;
-    font-size: 0;
+    top: calc(50% - 15px);
+  }
+
+  &.slick-prev {
+    left: 7%;
 
     &::before {
-      content: "";
-      width: 30px;
-      height: 30px;
-      border-top: 2px solid v.$white-color;
-      border-right: 2px solid v.$white-color;
-      display: inline-block;
-      position: absolute;
-      top: calc(50% - 15px);
-      // vertical-align: middle;
+      transform: rotate(-135deg);
+      left: calc(21.5px - 15px);
+    }
+  }
+
+  &.slick-next {
+    right: 7%;
+
+    &::before {
+      transform: rotate(45deg);
+      right: calc(21.5px - 15px);
+    }
+  }
+}
+
+.slick-dots {
+  width: 100%;
+  height: 16px;
+  position: absolute;
+  bottom: 5.6vw;
+  font-size: 0;
+  text-align: center;
+
+  li {
+    display: inline-block;
+
+    &:not(:first-child) {
+      margin-left: 16px;
     }
 
-    &.slick-prev {
-      left: 7%;
+    button {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: v.$dot-color;
+      display: block;      
+      font-size: 0;
+      opacity: .7;
 
-      &::before {
-        transform: rotate(-135deg);
-        left: calc(21.5px - 15px);
+      &:hover,
+      &:focus {
+        opacity: 1;
       }
     }
 
-    &.slick-next {
-      right: 7%;
-
-      &::before {
-        transform: rotate(45deg);
-        right: calc(21.5px - 15px);
+    &.slick-active {
+      button {
+        background-color: v.$activeDot-color;
+        opacity: 1;
+        pointer-events: none;
       }
     }
   }
+}
