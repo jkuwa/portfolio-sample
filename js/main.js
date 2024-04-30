@@ -24,6 +24,7 @@ $(function() {
   });
 
   $('.p-mv__slider').slick({
-    dots: true,  
+    dots: true,
+    appendArrows: ".p-title__wrapper",
   });
 });
