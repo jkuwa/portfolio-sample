@@ -23,9 +23,10 @@
   &__title {
     height: min( calc(7.5vw * 1.5), 4.8rem );
     position: relative;
+    color: v.$font-color;
     white-space: nowrap;
 
-    .p-title {
+    .p-title--sp {
       position: absolute;
       font-family: "Homemade Apple", cursive;
       font-size: min(7.5vw, 3.2rem);
@@ -36,7 +37,6 @@
       transition: opacity .6s;
 
       @include m.breakpoint(pc) {
-        position: absolute;
         opacity: 0;
         pointer-events: none;
       }

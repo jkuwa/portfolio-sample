@@ -101,7 +101,6 @@ ul {
 }
 @media (min-width: 960px) {
   .p-header__title .p-title--sp {
-    position: absolute;
     opacity: 0;
     pointer-events: none;
   }
@@ -144,22 +143,21 @@ ul {
     transition: unset;
   }
 }
+.p-nav.is-open {
+  right: 0;
+  left: 0;
+  overflow-y: auto;
+}
 .p-nav__list {
   display: flex;
   flex-direction: column;
+  gap: 40px;
   white-space: nowrap;
 }
 @media (min-width: 960px) {
   .p-nav__list {
     flex-direction: row;
-  }
-}
-.p-nav__list li:not(:first-child) {
-  margin-top: 40px;
-}
-@media (min-width: 960px) {
-  .p-nav__list li:not(:first-child) {
-    margin-top: 0;
+    gap: 0;
   }
 }
 .p-nav__item {
@@ -192,11 +190,6 @@ ul {
     padding: 28px 12px;
     font-size: 1.6rem;
   }
-}
-.p-nav.is-open {
-  right: 0;
-  left: 0;
-  overflow-y: auto;
 }
 
 .p-hamburgerBtn {
