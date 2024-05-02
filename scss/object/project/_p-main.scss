@@ -1,0 +1,15 @@
+@use "../../foundation/mixin" as m;
+@use "../../foundation/variables" as v;
+@use "sass:math";
+
+.p-main {
+  &__wrapper {
+    margin: 0 auto;
+    padding: 64px 0;
+    width: 93%;
+    max-width: 1120px;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+  }
+}

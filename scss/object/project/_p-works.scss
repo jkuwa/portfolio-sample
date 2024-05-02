@@ -1,0 +1,67 @@
+@use "../../foundation/mixin" as m;
+@use "../../foundation/variables" as v;
+@use "sass:math";
+
+.p-archive {
+  display: none;
+
+  &.is-open {
+    display: block;
+  }
+
+  &__tabs {
+    margin-top: 32px;
+    display: flex;
+
+    h3 {
+      width: 50%;
+    }
+  }
+
+  &__tab {
+    padding: 24px 0;
+    width: 100%;
+    color: v.$font-color;
+    font-size: 2.4rem;
+    line-height: 2;
+    font-weight: 700;
+
+    &.is-current {
+      border-bottom: 3px solid v.$main-color;
+    }
+  }
+
+  &__container {
+    margin-top: 32px;
+    padding: 32px 0;
+  }
+
+  &__list {
+    margin-top: 32px;
+    padding: 32px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+}
+
+.p-card {
+  padding-bottom: 46px;
+  display: block;
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    margin-top: 16px;
+    order: 1;
+    color: v.$font-color;
+    font-size: 3.2rem;
+  }
+
+  &__body {
+    color: v.$subFont-color;
+  }
+}

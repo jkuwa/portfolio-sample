@@ -1,6 +1,7 @@
 'use strict'
 
 $(function() {
+  // ハンバーガーメニュー
   $(".js-hamburger").on('click', function() {
     $(this).toggleClass("is-open");
     $(".js-nav").toggleClass("is-open");
@@ -23,8 +24,31 @@ $(function() {
     }
   });
 
-  $('.p-mv__slider').slick({
+  // スライダー
+  $(".p-mv__slider").slick({
     dots: true,
     appendArrows: ".p-title__wrapper",
+  });
+
+  // タブ切り替え
+  $(".js-archiveTab").on('click', function() {
+    // 選択中のタブを外す
+    $(".is-current").removeClass('is-current').attr({
+      'aria-selected': 'false',
+      'tabindex': '-1'
+    });
+    $(".is-open").removeClass('is-open');
+
+    // クリックしたタブにcurrentクラスを付与
+    $(this).children().addClass('is-current');
+    // 関連するコンテンツを表示
+    const index = $(this).index();
+    $(".js-archiveList").eq(index).addClass('is-open');
+
+    // aria-selected を切り替える
+    $(this).children().attr({
+      'aria-selected': 'true',
+      'tabindex': '0'
+    });
   });
 });

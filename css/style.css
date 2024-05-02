@@ -65,6 +65,19 @@ ul {
   }
 }
 
+.c-sectionTitle {
+  font-size: 3.2rem;
+  line-height: 1.875;
+  font-weight: 700;
+}
+@media (min-width: 960px) {
+  .c-sectionTitle {
+    color: #222222;
+    font-size: 4rem;
+    line-height: 1.5;
+  }
+}
+
 .p-header {
   width: 100%;
   background: #fff;
@@ -385,5 +398,69 @@ ul {
   background-color: #555555;
   opacity: 1;
   pointer-events: none;
+}
+
+.p-main__wrapper {
+  margin: 0 auto;
+  padding: 64px 0;
+  width: 93%;
+  max-width: 1120px;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+.p-archive {
+  display: none;
+}
+.p-archive.is-open {
+  display: block;
+}
+.p-archive__tabs {
+  margin-top: 32px;
+  display: flex;
+}
+.p-archive__tabs h3 {
+  width: 50%;
+}
+.p-archive__tab {
+  padding: 24px 0;
+  width: 100%;
+  color: #222222;
+  font-size: 2.4rem;
+  line-height: 2;
+  font-weight: 700;
+}
+.p-archive__tab.is-current {
+  border-bottom: 3px solid #E48484;
+}
+.p-archive__container {
+  margin-top: 32px;
+  padding: 32px 0;
+}
+.p-archive__list {
+  margin-top: 32px;
+  padding: 32px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.p-card {
+  padding-bottom: 46px;
+  display: block;
+}
+.p-card__header {
+  display: flex;
+  flex-direction: column;
+}
+.p-card__title {
+  margin-top: 16px;
+  order: 1;
+  color: #222222;
+  font-size: 3.2rem;
+}
+.p-card__body {
+  color: #555555;
 }
 /*# sourceMappingURL=style.css.map */

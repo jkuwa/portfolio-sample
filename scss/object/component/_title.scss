@@ -1,0 +1,14 @@
+@use "../../foundation/mixin" as m;
+@use "../../foundation/variables" as v;
+
+.c-sectionTitle {
+  font-size: 3.2rem;
+  line-height: 1.875;
+  font-weight: 700;
+
+  @include m.breakpoint(pc) {
+    color: v.$font-color;
+    font-size: 4rem;
+    line-height: 1.5;
+  }
+}
