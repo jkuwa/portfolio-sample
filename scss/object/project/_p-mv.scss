@@ -13,33 +13,28 @@
     &.slick-initialized {
       opacity: 1;
     }
-  }  
-}
-
-.p-mv__img {
-  width: 100%;
-  height: clamp(285px, 66.6vw, 810px);
-  background: v.$white-color center/cover;
-  position: relative;
-
-  &::before {
-    content: "";
-    background: rgba(0 0 0 /.7);
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
   }
 
-  &.-first {
-    background-image: url(../../../images/mv_01.jpg);
-  }
-  &.-second {
-    background-image: url(../../../images/mv_02.jpg);
-  }
-  &.-third {
-    background-image: url(../../../images/mv_03.jpg);
+  &__img {
+    position: relative;
+  
+    &::before {
+      content: "";
+      background: rgba(0 0 0 /.7);
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+
+    img {
+      width: 100%;
+      height: clamp(285px, 66.6vw, 810px);
+      background: v.$main-color;
+      object-fit: cover;
+      object-position: center;
+    }
   }
 }
 
@@ -80,7 +75,8 @@
     top: 0;
     right: 0;
     left: 0;
-
+    z-index: 5;
+  
     @include m.breakpoint(pc) {
       height: calc(100% - 64px - 16px);
     }

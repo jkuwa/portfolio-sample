@@ -11,15 +11,30 @@ $(function() {
     } else {
       $(".js-hamburgerBar").text('メニューを開く');
     }
+
+    // aria-hidden 切り替え
+    const ariaHidden = $(".js-nav").attr('aria-hidden');
+    if ( ariaHidden === 'true' ) {
+      $(".js-nav").attr('aria-hidden', 'false');
+    } else {
+      $(".js-nav").attr('aria-hidden', 'true');
+    }
   });
 
+  // aria-hidden の定義
+  const bp = 960;
+  const width = $(this).width();
+  if (width < bp) {
+    $(".js-nav").attr('aria-hidden', 'true');
+  } else {
+    $(".js-nav").attr('aria-hidden', 'false');
+  }
+
+  // リサイズでメニュー閉じる
   $(window).on('resize', function() {
-    const bp = 960;
-    const width = $(this).width();
-  
     if (width < bp && $(".js-hamburger").hasClass("is-open")) {
       $(".js-hamburger").removeClass("is-open");
-      $(".js-nav").removeClass("is-open");
+      $(".js-nav").removeClass("is-open").attr('aria-hidden', 'true');
       $(".js-hamburgerBar").text('メニューを開く');
     }
   });
@@ -27,7 +42,9 @@ $(function() {
   // スライダー
   $(".p-mv__slider").slick({
     dots: true,
-    appendArrows: ".p-title__wrapper",
+    appendArrows: '.p-slider__arrow',
+    prevArrow: '<button type="button" class="slick-prev">前の画像へ</button>',
+    nextArrow: '<button type="button" class="slick-next">次の画像へ</button>'
   });
 
   // タブ切り替え
