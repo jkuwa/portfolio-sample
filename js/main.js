@@ -14,6 +14,7 @@ $(function() {
 
     // aria-hidden 切り替え
     const ariaHidden = $(".js-nav").attr('aria-hidden');
+
     if ( ariaHidden === 'true' ) {
       $(".js-nav").attr('aria-hidden', 'false');
     } else {
@@ -24,6 +25,7 @@ $(function() {
   // aria-hidden の定義
   const bp = 960;
   const width = $(this).width();
+
   if (width < bp) {
     $(".js-nav").attr('aria-hidden', 'true');
   } else {
@@ -32,7 +34,7 @@ $(function() {
 
   // リサイズでメニュー閉じる
   $(window).on('resize', function() {
-    if (width < bp && $(".js-hamburger").hasClass("is-open")) {
+    if ( width < bp && $(".js-hamburger").hasClass('is-open') ) {
       $(".js-hamburger").removeClass("is-open");
       $(".js-nav").removeClass("is-open").attr('aria-hidden', 'true');
       $(".js-hamburgerBar").text('メニューを開く');
@@ -47,9 +49,12 @@ $(function() {
     nextArrow: '<button type="button" class="slick-next">次の画像へ</button>'
   });
 
-  // タブ切り替え
+  // タブボタンでコンテンツ切り替え
   $(".js-archiveTab").on('click', function() {
     // 選択中のタブを外す
+    if ( $(this).children().hasClass('is-current') ) {
+      return;
+    }
     $(".is-current").removeClass('is-current').attr({
       'aria-selected': 'false',
       'tabindex': '-1'
@@ -68,4 +73,16 @@ $(function() {
       'tabindex': '0'
     });
   });
+
+  // カードのテンプレート化
+  const card = $("#card").html();
+  for (let i = 0; i < 4; i++) {
+    $("#cardList-static").append(card);
+  }
+
+  const cardDynamic = card.replace(/静的/g, '動的');
+   // '静的'だと１番目しか置換されないため文字列をパターン化（//）し、修飾子（g）で２番目以降も置換されるようにする。
+  for (let i = 0; i < 4; i++) {
+    $("#cardList-dynamic").append(cardDynamic);
+  }
 });
