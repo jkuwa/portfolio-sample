@@ -32,12 +32,19 @@ $(function() {
     $(".js-nav").attr('aria-hidden', 'false');
   }
 
-  // リサイズでメニュー閉じる
+  // リサイズでメニュー閉じる、aria-hidden切り替え
   $(window).on('resize', function() {
+    const width = $(this).width();
+    const ariaHidden = $(".js-nav").attr('aria-hidden');
+
     if ( width < bp && $(".js-hamburger").hasClass('is-open') ) {
       $(".js-hamburger").removeClass("is-open");
-      $(".js-nav").removeClass("is-open").attr('aria-hidden', 'true');
+      $(".js-nav").removeClass("is-open");
       $(".js-hamburgerBar").text('メニューを開く');
+    } else if ( width < bp && ariaHidden === 'false' ) {
+      $(".js-nav").attr('aria-hidden', 'true');
+    } else if ( width >= bp && ariaHidden === 'true' ) {
+      $(".js-nav").attr('aria-hidden', 'false');
     }
   });
 
