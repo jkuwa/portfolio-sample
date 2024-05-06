@@ -3,6 +3,8 @@
 @use "sass:math";
 
 .p-main {
+  background: v.$white-color;
+  
   &__wrapper {
     margin: 0 auto;
     padding: 64px 0;

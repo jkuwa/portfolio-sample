@@ -82,6 +82,15 @@ ul {
   opacity: unset;
 }
 
+.c-icon {
+  padding-top: min(21.5%, 160px);
+  width: 21.5%;
+  max-width: 160px;
+  background-position: top center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 .p-header {
   width: 100%;
   background: #fff;
@@ -504,5 +513,69 @@ ul {
 }
 .p-card__body {
   color: #555555;
+}
+
+.p-skills__list {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+@media (min-width: 960px) {
+  .p-skills__list {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.p-skill {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 24px;
+}
+@media (min-width: 960px) {
+  .p-skill {
+    width: calc(calc(100% - 32px)/2);
+    gap: 32px;
+  }
+}
+.p-skill__desc {
+  flex: 1;
+}
+.p-skill__desc dt {
+  font-family: "Roboto", sans-serif;
+  font-size: 2.4rem;
+  line-height: 2;
+  font-weight: 700;
+  font-style: normal;
+}
+.p-skill__desc dd {
+  margin-top: 8px;
+  color: #333333;
+}
+.p-skill--html {
+  background-image: url(../images/skills_html.svg);
+}
+.p-skill--css {
+  background-image: url(../images/skills_css.svg);
+}
+.p-skill--jquery {
+  background-image: url(../images/skills_jQuery.svg);
+}
+.p-skill--wp {
+  background-image: url(../images/skills_WP.svg);
+}
+.p-skill--xd {
+  background-image: url(../images/skills_adobeXd.svg);
+}
+.p-skill--st {
+  background-image: url(../images/skills_sourcetree.png);
+}
+.p-skill--figma {
+  background-image: url(../images/skills_figma.svg);
+}
+.p-skill--ps {
+  background-image: url(../images/skills_photoshop.svg);
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,71 @@
+@use "../../foundation/mixin" as m;
+@use "../../foundation/variables" as v;
+@use "sass:math";
+
+.p-skills {
+  &__list {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    @include m.breakpoint(pc) {
+      flex-direction: row;
+      flex-wrap:wrap;
+    }
+  }
+}
+
+.p-skill {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 24px;
+
+  @include m.breakpoint(pc) {
+    width: calc( math.div( calc(100% - 32px), 2) );
+    gap: 32px;
+  }
+
+  &__desc {
+    flex: 1;
+
+    dt {
+      font-family: "Roboto", sans-serif;
+      font-size: 2.4rem;
+      line-height: 2;
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    dd {
+      margin-top: 8px;
+      color: v.$dd-color;
+    }
+  }
+
+  &--html {
+    background-image: url(../images/skills_html.svg);
+  }
+  &--css {
+    background-image: url(../images/skills_css.svg);
+  }
+  &--jquery {
+    background-image: url(../images/skills_jQuery.svg);
+  }
+  &--wp {
+    background-image: url(../images/skills_WP.svg);
+  }
+  &--xd {
+    background-image: url(../images/skills_adobeXd.svg);
+  }
+  &--st {
+    background-image: url(../images/skills_sourcetree.png);
+  }
+  &--figma {
+    background-image: url(../images/skills_figma.svg);
+  }
+  &--ps {
+    background-image: url(../images/skills_photoshop.svg);
+  }
+}

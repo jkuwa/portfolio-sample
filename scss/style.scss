@@ -12,6 +12,7 @@
 // component
 @use "object/component/title";
 @use "object/component/link";
+@use "object/component/icon";
 
 // project
 @use "object/project/p-header";
@@ -21,5 +22,6 @@
 @use "object/project/p-slider";
 @use "object/project/p-main";
 @use "object/project/p-works";
+@use "object/project/p-skills";
 
 // utility
