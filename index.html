@@ -21,12 +21,13 @@
         <p class="p-title--pc">ポートフォリオ</p>
       </a>
       <button class="p-hamburgerBtn js-hamburger"><span class="js-hamburgerBar">メニューを開く</span></button>
+
       <nav class="p-nav js-nav" aria-hidden="true">
         <ul class="p-nav__list">
           <li><a href="index.html" class="p-nav__item">ホーム</a></li>
-          <li><a href="#" class="p-nav__item">自己紹介</a></li>
-          <li><a href="#" class="p-nav__item">制作実績</a></li>
-          <li><a href="#" class="p-nav__item">スキル</a></li>
+          <li><a href="#about" class="p-nav__item">自己紹介</a></li>
+          <li><a href="#works" class="p-nav__item">制作実績</a></li>
+          <li><a href="#skills" class="p-nav__item">スキル</a></li>
           <li><a href="#" class="p-nav__item">よくある質問</a></li>
         </ul>
         <a href="#" class="p-nav__inquiry">お問い合わせ</a>
@@ -43,6 +44,7 @@
         </div>
         <div class="p-slider__arrow"></div>
       </div>
+
       <div class="p-mv__slider" aria-roledescription="カルーセル" aria-label="パソコンイメージ写真のカルーセル">
         <div class="p-mv__img" role="tabpanel" aria-roledescription="スライド" aria-label="1 of 3"><img src="images/mv_01.jpg" alt="ノートパソコンの画面を指さしている写真"></div>
         <div class="p-mv__img" role="tabpanel" aria-roledescription="スライド" aria-label="2 of 3"><img src="images/mv_02.jpg" alt="ノートパソコンを操作しているところを上から撮影した写真"></div>
@@ -52,7 +54,7 @@
     </div>
 
     <div class="p-main__wrapper">
-      <section class="p-works">
+      <section id="works" class="p-works">
         <h2 class="c-sectionTitle">制作実績</h2>
         
         <div class="p-archive__tabs" role="tablist" aria-label="制作実績タブ">
@@ -61,7 +63,7 @@
         </div>
         
         <div class="p-archive__container">
-
+          <!-- テンプレート -->
           <template id="card">
             <li>
               <a href="#" class="c-link--none">
@@ -90,7 +92,7 @@
         </div>
       </section>
 
-      <section class="p-skills">
+      <section id="skills" class="p-skills">
         <h2 class="c-sectionTitle">スキル</h2>
         <dl class="p-skills__list">
           <div class="p-skill">
@@ -150,6 +152,24 @@
             <div class="c-icon p-skill--ps"></div>
           </div>
         </dl>
+      </section>
+
+      <section id="about" class="p-about">
+        <h2 class="c-sectionTitle">自己紹介</h2>
+        <div class="p-about__body">
+          <div class="p-about__image">
+            <img src="images/about_avatar.jpg" alt="自分の写真" class="p-about__avatar">
+            <ul class="p-about__sns">
+              <li><a><img src="images/about_sns-facebook.svg" alt="facebook"></a></li>
+              <li><a><img src="images/about_sns-instagram.png" alt="instagram"></a></li>              
+            </ul>
+          </div>
+          <div class="p-about__text">
+            <p>ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</p>
+            <p>ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</p>
+            <p>ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</p>
+          </div>
+        </div>
       </section>
     </div>
 

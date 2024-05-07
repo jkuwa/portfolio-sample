@@ -606,4 +606,51 @@ ul {
 .p-skill--ps {
   background-image: url(../images/skills_photoshop.svg);
 }
+
+.p-about {
+  width: 100%;
+}
+.p-about__body {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+@media (min-width: 960px) {
+  .p-about__body {
+    flex-direction: row;
+  }
+}
+.p-about__image {
+  text-align: center;
+}
+.p-about__image img {
+  width: 82%;
+  max-width: 256px;
+  height: auto;
+}
+@media (min-width: 960px) {
+  .p-about__image img {
+    width: 256px;
+  }
+}
+.p-about__sns {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+.p-about__sns img {
+  width: 32px;
+  height: auto;
+}
+@media (min-width: 960px) {
+  .p-about__text p {
+    color: #222222;
+    font-size: 2rem;
+  }
+}
+.p-about__text p:not(:first-child) {
+  margin-top: 32px;
+}
 /*# sourceMappingURL=style.css.map */
