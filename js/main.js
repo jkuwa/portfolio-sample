@@ -3,55 +3,64 @@
 $(function() {
   // ハンバーガーメニュー
   $(".js-hamburger").on('click', function() {
-    $(this).toggleClass("is-open");
-    $(".js-nav").toggleClass("is-open");
+    $(this).toggleClass('is-open');
+    $(".js-nav").toggleClass('is-open');
+    $("body").toggleClass('is-open')
 
     if ($(this).text() === 'メニューを開く') {
       $(".js-hamburgerBar").text('メニューを閉じる');
+      $(".js-hamburger").attr('aria-expanded', 'true');
     } else {
       $(".js-hamburgerBar").text('メニューを開く');
-    }
-
-    // aria-hidden 切り替え
-    const ariaHidden = $(".js-nav").attr('aria-hidden');
-
-    if ( ariaHidden === 'true' ) {
-      $(".js-nav").attr('aria-hidden', 'false');
-    } else {
-      $(".js-nav").attr('aria-hidden', 'true');
+      $(".js-hamburger").attr('aria-expanded', 'false');
     }
   });
 
-  // aria-hidden の定義
+  // 最後の項目の後ハンバーガーボタンに戻る
+  $(".js-focusTrap").on('focus', function() {
+    if ( $(".js-hamburger").hasClass('is-open') ) {
+    $(".js-hamburger").focus();
+    }
+  });
+
   const bp = 960;
   const width = $(this).width();
 
-  if (width < bp) {
-    $(".js-nav").attr('aria-hidden', 'true');
-  } else {
-    $(".js-nav").attr('aria-hidden', 'false');
+  if ( width >= bp ) {
+    $(".js-focusTrap").attr('tabindex', '-1');
   }
 
-  // リサイズでメニュー閉じる、aria-hidden切り替え
+  // Escキーでメニュー閉じる
+  $(document).keydown( function(e) {
+    if ( e.keyCode == 27 && $(".js-hamburger").hasClass('is-open') ) {
+      $(".js-hamburger").removeClass('is-open').attr('aria-expanded', 'false');
+      $(".js-nav").removeClass('is-open');
+      $("body").removeClass('is-open');
+      $(".js-hamburgerBar").text('メニューを開く');
+    }
+  });
+
+  // リサイズでメニュー閉じる、tabindex切り替え
   $(window).on('resize', function() {
     const width = $(this).width();
-    const ariaHidden = $(".js-nav").attr('aria-hidden');
 
-    if ( width < bp && $(".js-hamburger").hasClass('is-open') ) {
-      $(".js-hamburger").removeClass("is-open");
-      $(".js-nav").removeClass("is-open");
+    if ( $(".js-hamburger").hasClass('is-open') ) {
+      $(".js-hamburger").removeClass('is-open').attr('aria-expanded', 'false');
+      $(".js-nav").removeClass('is-open');
+      $("body").removeClass('is-open');
       $(".js-hamburgerBar").text('メニューを開く');
-    } else if ( width < bp && ariaHidden === 'false' ) {
-      $(".js-nav").attr('aria-hidden', 'true');
-    } else if ( width >= bp && ariaHidden === 'true' ) {
-      $(".js-nav").attr('aria-hidden', 'false');
+    } else if ( width >= bp ) {
+      $(".js-focusTrap").attr('tabindex', '-1');
+    } else if ( width < bp ) {
+      $(".js-focusTrap").attr('tabindex', '0');
     }
   });
 
   // ページ内リンクでメニューを閉じる
   $(".p-nav__list a").on('click', function() {
-    $(".js-hamburger").removeClass("is-open");
-    $(".js-nav").removeClass("is-open");
+    $(".js-hamburger").removeClass('is-open').attr('aria-expanded', 'false');
+    $(".js-nav").removeClass('is-open');
+    $("body").removeClass('is-open');
     $(".js-hamburgerBar").text('メニューを開く');
   });
 
@@ -95,7 +104,7 @@ $(function() {
   }
 
   const cardDynamic = card.replace(/静的/g, '動的');
-   // '静的'だと１番目しか置換されないため文字列をパターン化（//）し、修飾子（g）で２番目以降も置換されるようにする。
+   // '静的'だと１番目しか置換されないため文字列をパターン化（/ /）し、修飾子（g）で２番目以降も置換されるようにする。
   for (let i = 0; i < 4; i++) {
     $("#cardList-dynamic").append(cardDynamic);
   }

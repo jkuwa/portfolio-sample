@@ -27,6 +27,11 @@ button:hover {
   opacity: 0.7;
 }
 
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #384D98;
+}
+
 .roboto-regular {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
@@ -146,6 +151,7 @@ ul {
 }
 
 .p-nav {
+  visibility: hidden;
   padding: 171px 0 147px;
   background: #E3DEDE;
   display: flex;
@@ -162,6 +168,7 @@ ul {
 }
 @media (min-width: 960px) {
   .p-nav {
+    visibility: visible;
     padding: 0;
     flex-direction: row;
     background: inherit;
@@ -170,6 +177,7 @@ ul {
   }
 }
 .p-nav.is-open {
+  visibility: visible;
   right: 0;
   left: 0;
   overflow-y: auto;
@@ -216,6 +224,10 @@ ul {
     padding: 28px 12px;
     font-size: 1.6rem;
   }
+}
+
+body.is-open {
+  position: fixed;
 }
 
 .p-hamburgerBtn {

@@ -20,9 +20,9 @@
         <p class="p-title--sp">Hasegawa Web</p>
         <p class="p-title--pc">ポートフォリオ</p>
       </a>
-      <button class="p-hamburgerBtn js-hamburger"><span class="js-hamburgerBar">メニューを開く</span></button>
+      <button class="p-hamburgerBtn js-hamburger" type="button" aria-expanded="false" aria-controls="nav"><span class="js-hamburgerBar">メニューを開く</span></button>
 
-      <nav class="p-nav js-nav" aria-hidden="true">
+      <nav id="nav" class="p-nav js-nav">
         <ul class="p-nav__list">
           <li><a href="index.html" class="p-nav__item">ホーム</a></li>
           <li><a href="#about" class="p-nav__item">自己紹介</a></li>
@@ -31,6 +31,7 @@
           <li><a href="#" class="p-nav__item">よくある質問</a></li>
         </ul>
         <a href="#" class="p-nav__inquiry">お問い合わせ</a>
+        <div class="js-focusTrap" tabindex="0"></div>
       </nav>
     </div>
   </header>
