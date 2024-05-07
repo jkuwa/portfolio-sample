@@ -48,6 +48,13 @@ $(function() {
     }
   });
 
+  // ページ内リンクでメニューを閉じる
+  $(".p-nav__list a").on('click', function() {
+    $(".js-hamburger").removeClass("is-open");
+    $(".js-nav").removeClass("is-open");
+    $(".js-hamburgerBar").text('メニューを開く');
+  });
+
   // スライダー
   $(".p-mv__slider").slick({
     dots: true,
