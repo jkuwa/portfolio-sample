@@ -13,14 +13,11 @@
     margin-top: 32px;
     display: flex;
 
-    h3 {
-      width: 50%;
-    }
   }
 
   &__tab {
     padding: 24px 0;
-    width: 100%;
+    width: 50%;
     color: v.$font-color;
     font-size: 2.4rem;
     line-height: 2;

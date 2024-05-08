@@ -217,6 +217,7 @@ ul {
   color: #fff;
   font-size: 2.4rem;
   font-weight: 700;
+  white-space: nowrap;
 }
 @media (min-width: 960px) {
   .p-nav__inquiry {
@@ -228,6 +229,12 @@ ul {
 
 body.is-open {
   position: fixed;
+}
+
+@media (min-width: 960px) {
+  .p-focusTrap {
+    display: none;
+  }
 }
 
 .p-hamburgerBtn {
@@ -445,12 +452,9 @@ body.is-open {
   margin-top: 32px;
   display: flex;
 }
-.p-archive__tabs h3 {
-  width: 50%;
-}
 .p-archive__tab {
   padding: 24px 0;
-  width: 100%;
+  width: 50%;
   color: #222222;
   font-size: 2.4rem;
   line-height: 2;

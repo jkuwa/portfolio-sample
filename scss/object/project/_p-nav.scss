@@ -69,6 +69,7 @@
     color: v.$white-color;
     font-size: 2.4rem;
     font-weight: 700;
+    white-space: nowrap;
 
     @include m.breakpoint(pc) {
       margin: 0 0 0 20px;
@@ -80,4 +81,10 @@
 
 body.is-open {
   position: fixed;
+}
+
+.p-focusTrap {
+  @include m.breakpoint(pc) {
+    display: none;
+  }
 }

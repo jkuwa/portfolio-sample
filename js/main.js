@@ -1,7 +1,7 @@
 'use strict'
 
 $(function() {
-  // ハンバーガーメニュー
+  /* --- ハンバーガーメニュー --- */
   $(".js-hamburger").on('click', function() {
     $(this).toggleClass('is-open');
     $(".js-nav").toggleClass('is-open');
@@ -23,16 +23,9 @@ $(function() {
     }
   });
 
-  const bp = 960;
-  const width = $(this).width();
-
-  if ( width >= bp ) {
-    $(".js-focusTrap").attr('tabindex', '-1');
-  }
-
   // Escキーでメニュー閉じる
   $(document).keydown( function(e) {
-    if ( e.keyCode == 27 && $(".js-hamburger").hasClass('is-open') ) {
+    if ( e.which === 27 && $(".js-hamburger").hasClass('is-open') ) {
       $(".js-hamburger").removeClass('is-open').attr('aria-expanded', 'false');
       $(".js-nav").removeClass('is-open');
       $("body").removeClass('is-open');
@@ -40,19 +33,13 @@ $(function() {
     }
   });
 
-  // リサイズでメニュー閉じる、tabindex切り替え
+  // リサイズでメニュー閉じる
   $(window).on('resize', function() {
-    const width = $(this).width();
-
     if ( $(".js-hamburger").hasClass('is-open') ) {
       $(".js-hamburger").removeClass('is-open').attr('aria-expanded', 'false');
       $(".js-nav").removeClass('is-open');
       $("body").removeClass('is-open');
       $(".js-hamburgerBar").text('メニューを開く');
-    } else if ( width >= bp ) {
-      $(".js-focusTrap").attr('tabindex', '-1');
-    } else if ( width < bp ) {
-      $(".js-focusTrap").attr('tabindex', '0');
     }
   });
 
@@ -64,7 +51,8 @@ $(function() {
     $(".js-hamburgerBar").text('メニューを開く');
   });
 
-  // スライダー
+
+  /* --- スライダー --- */
   $(".p-mv__slider").slick({
     dots: true,
     appendArrows: '.p-slider__arrow',
@@ -72,30 +60,51 @@ $(function() {
     nextArrow: '<button type="button" class="slick-next">次の画像へ</button>'
   });
 
-  // タブボタンでコンテンツ切り替え
+
+  /* --- タブボタンでコンテンツ切り替え --- */
   $(".js-archiveTab").on('click', function() {
     // 選択中のタブを外す
-    if ( $(this).children().hasClass('is-current') ) {
+    if ( $(this).hasClass('is-current') ) {
       return;
     }
     $(".is-current").removeClass('is-current').attr({
       'aria-selected': 'false',
-      'tabindex': '-1'
+      'tabindex': '-1',
     });
     $(".is-open").removeClass('is-open');
 
     // クリックしたタブにcurrentクラスを付与
-    $(this).children().addClass('is-current');
+    $(this).addClass('is-current');
     // 関連するコンテンツを表示
     const index = $(this).index();
     $(".js-archiveList").eq(index).addClass('is-open');
 
     // aria-selected を切り替える
-    $(this).children().attr({
+    $(this).attr({
       'aria-selected': 'true',
       'tabindex': '0'
     });
   });
+
+  // タブのキーボード操作
+  $( ".js-archiveTab").keydown(function(e) {
+    if ( e.which === 37 ) {
+      e.preventDefault();
+      console.log('done');
+      const $prevTab = $(this).prev('.js-archiveTab');
+      if ( $prevTab.length ) {
+        $prevTab.focus();
+      }
+    } else if ( e.which === 39 ) {
+      e.preventDefault();
+
+      const $nextTab = $(this).next('.js-archiveTab');
+      if ( $nextTab.length ) {
+        $nextTab.focus();
+      }
+    }
+  });
+
 
   // カードのテンプレート化
   const card = $("#card").html();
