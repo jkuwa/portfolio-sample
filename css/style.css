@@ -155,11 +155,12 @@ ul {
   position: fixed;
   top: 160px;
   bottom: 0;
-  right: -100%;
-  left: 100%;
+  right: 0;
+  left: 0;
   z-index: 10;
-  overflow-x: hidden;
+  transform: translateX(100vw);
   transition: all 0.3s;
+  overflow-x: hidden;
 }
 @media (min-width: 960px) {
   .p-nav {
@@ -173,8 +174,7 @@ ul {
 }
 .p-nav.is-open {
   visibility: visible;
-  right: 0;
-  left: 0;
+  transform: translateX(0);
   overflow-y: auto;
 }
 .p-nav__list {
