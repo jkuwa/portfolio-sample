@@ -1,7 +1,8 @@
 'use strict'
 
 $(function() {
-  /* --- ハンバーガーメニュー --- */
+  /* ---------- ハンバーガーメニュー ---------- */
+
   $(".js-hamburger").on('click', function() {
     $(this).toggleClass('is-open');
     $(".js-nav").toggleClass('is-open');
@@ -26,6 +27,7 @@ $(function() {
   // Escキーでメニュー閉じる
   $(document).keydown( function(e) {
     if ( e.which === 27 && $(".js-hamburger").hasClass('is-open') ) {
+      e.preventDefault();
       $(".js-hamburger").removeClass('is-open').attr('aria-expanded', 'false');
       $(".js-nav").removeClass('is-open');
       $("body").removeClass('is-open');
@@ -52,7 +54,8 @@ $(function() {
   });
 
 
-  /* --- スライダー --- */
+  /* ---------- スライダー ---------- */
+
   $(".p-mv__slider").slick({
     dots: true,
     appendArrows: '.p-slider__arrow',
@@ -61,7 +64,8 @@ $(function() {
   });
 
 
-  /* --- タブボタンでコンテンツ切り替え --- */
+  /* ---------- タブボタンでコンテンツ切り替え ---------- */
+
   $(".js-archiveTab").on('click', function() {
     // 選択中のタブを外す
     if ( $(this).hasClass('is-current') ) {
@@ -71,7 +75,7 @@ $(function() {
       'aria-selected': 'false',
       'tabindex': '-1',
     });
-    $(".is-open").removeClass('is-open');
+    $(".js-archiveList").removeClass('is-open');
 
     // クリックしたタブにcurrentクラスを付与
     $(this).addClass('is-current');
@@ -86,19 +90,19 @@ $(function() {
     });
   });
 
-  // タブのキーボード操作
-  $( ".js-archiveTab").keydown(function(e) {
-    if ( e.which === 37 ) {
+  // キーボード操作
+  $( ".js-archiveTab").keydown(function(e) {    
+    if ( e.which === 37 ) {           // ←を押したら
       e.preventDefault();
-      console.log('done');
       const $prevTab = $(this).prev('.js-archiveTab');
+
       if ( $prevTab.length ) {
         $prevTab.focus();
       }
-    } else if ( e.which === 39 ) {
+    } else if ( e.which === 39 ) {    // →を押したら
       e.preventDefault();
-
       const $nextTab = $(this).next('.js-archiveTab');
+
       if ( $nextTab.length ) {
         $nextTab.focus();
       }
@@ -106,15 +110,15 @@ $(function() {
   });
 
 
-  // カードのテンプレート化
-  const card = $("#card").html();
-  for (let i = 0; i < 4; i++) {
-    $("#cardList-static").append(card);
-  }
+  /* ---------- テンプレート ---------- */
 
-  const cardDynamic = card.replace(/静的/g, '動的');
-   // '静的'だと１番目しか置換されないため文字列をパターン化（/ /）し、修飾子（g）で２番目以降も置換されるようにする。
+  const card = $(".js-card").html();
   for (let i = 0; i < 4; i++) {
-    $("#cardList-dynamic").append(cardDynamic);
+    $(".js-static").append(card);
+  }
+  // 静的→動的に書き換え
+  const cardDynamic = card.replace(/静的/g, '動的');
+  for (let i = 0; i < 4; i++) {
+    $(".js-dynamic").append(cardDynamic);
   }
 });
