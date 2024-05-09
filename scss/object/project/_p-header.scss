@@ -13,11 +13,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    @include m.breakpoint(pc2) {
-      width: 78%;
-      max-width: unset;
-    }
   }
 
   &__title {
