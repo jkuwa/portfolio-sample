@@ -108,20 +108,12 @@ ul {
   justify-content: space-between;
   align-items: center;
 }
-@media (min-width: 1440px) {
-  .p-header__inner {
-    width: 78%;
-    max-width: unset;
-  }
-}
 .p-header__title {
-  height: min(11.25vw, 4.8rem);
-  position: relative;
   color: #222222;
+  font-size: 0;
   white-space: nowrap;
 }
 .p-header__title .p-title--sp {
-  position: absolute;
   font-family: "Homemade Apple", cursive;
   font-size: min(7.5vw, 3.2rem);
   font-weight: 400;
@@ -132,11 +124,13 @@ ul {
 }
 @media (min-width: 960px) {
   .p-header__title .p-title--sp {
+    position: absolute;
     opacity: 0;
     pointer-events: none;
   }
 }
 .p-header__title .p-title--pc {
+  position: absolute;
   font-size: 3.2rem;
   font-weight: 700;
   opacity: 0;
@@ -145,6 +139,7 @@ ul {
 }
 @media (min-width: 960px) {
   .p-header__title .p-title--pc {
+    position: static;
     opacity: 1;
     pointer-events: auto;
   }
@@ -241,7 +236,6 @@ body.is-open {
   width: 50px;
   height: 50px;
   position: relative;
-  font-size: 0;
 }
 @media (min-width: 960px) {
   .p-hamburgerBtn {
@@ -668,5 +662,9 @@ body.is-open {
 }
 .p-about__text p:not(:first-child) {
   margin-top: 32px;
+}
+
+.u-hidden {
+  font-size: 0;
 }
 /*# sourceMappingURL=style.css.map */

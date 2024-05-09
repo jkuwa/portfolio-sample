@@ -13,17 +13,19 @@
   <link rel="stylesheet" href="css/style.css">
   <title>portfolio-sample</title>
 </head>
+
 <body>
   <header class="l-header p-header">
     <div class="p-header__inner">
-      <a href="index.html" class="p-header__title">
+      <a href="index.html" class="p-header__title" aria-label="サイトタイトル">
         <p class="p-title--sp">Hasegawa Web</p>
         <p class="p-title--pc">ポートフォリオ</p>
+        <span class="u-hidden">ホームに戻る</span>
       </a>
-      <button class="p-hamburgerBtn js-hamburger" type="button" aria-expanded="false" aria-controls="nav"><span class="js-hamburgerBar">メニューを開く</span></button>
+      <button class="p-hamburgerBtn js-hamburger" type="button" aria-expanded="false" aria-controls="nav"><span class="u-hidden js-hamburgerBar">メニューを開く</span></button>
 
       <nav id="nav" class="p-nav js-nav">
-        <ul class="p-nav__list">
+        <ul class="p-nav__list" tabindex="0">
           <li><a href="index.html" class="p-nav__item">ホーム</a></li>
           <li><a href="#about" class="p-nav__item">自己紹介</a></li>
           <li><a href="#works" class="p-nav__item">制作実績</a></li>
@@ -39,24 +41,30 @@
   <main class="l-main p-main">
     <div class="p-mv">
       <div class="p-title__wrapper">
-        <div class="p-title">
-          <p>Welcome to My Portfolio</p>
-          <h1>自分の名前<br><span>キャッチコピーが入ります。</span></h1>
+        <div class="p-title" aria-label="タイトル" tabindex="0">
+          <p tabindex="0">Welcome to My Portfolio</p>
+          <h1 tabindex="0">自分の名前<br><span>キャッチコピーが入ります。</span></h1>
         </div>
         <div class="p-slider__arrow"></div>
       </div>
 
       <div class="p-mv__slider" aria-roledescription="カルーセル" aria-label="パソコンイメージ写真のカルーセル">
-        <div class="p-mv__img" role="tabpanel" aria-roledescription="スライド" aria-label="1 of 3"><img src="images/mv_01.jpg" alt="ノートパソコンの画面を指さしている写真"></div>
-        <div class="p-mv__img" role="tabpanel" aria-roledescription="スライド" aria-label="2 of 3"><img src="images/mv_02.jpg" alt="ノートパソコンを操作しているところを上から撮影した写真"></div>
-        <div class="p-mv__img" role="tabpanel" aria-roledescription="スライド" aria-label="3 of 3"><img src="images/mv_03.jpg" alt="ノートパソコンの手前にノートとペン、右にコーヒカップが置いてある写真"></div>
+        <div class="p-mv__img" role="tabpanel" aria-roledescription="スライド" aria-label="1 of 3">
+          <img src="images/mv_01.jpg" alt="ノートパソコンの画面を指さしている写真">
+        </div>
+        <div class="p-mv__img" role="tabpanel" aria-roledescription="スライド" aria-label="2 of 3">
+          <img src="images/mv_02.jpg" alt="ノートパソコンを操作しているところを上から撮影した写真">
+        </div>
+        <div class="p-mv__img" role="tabpanel" aria-roledescription="スライド" aria-label="3 of 3">
+          <img src="images/mv_03.jpg" alt="ノートパソコンの手前にノートとペン、右にコーヒカップが置いてある写真">
+        </div>
       </div>
       
     </div>
 
     <div class="p-main__wrapper">
       <section id="works" class="p-works">
-        <h2 class="c-sectionTitle">制作実績</h2>
+        <h2 class="c-sectionTitle" tabindex="0">制作実績</h2>
         
         <div class="p-archive__tabs" role="tablist" aria-label="制作実績タブ">
           <button id="tab-static" class="p-archive__tab is-current js-archiveTab" role="tab" aria-selected="true" aria-controls="static-contents" tabindex="0" type="button">静的サイト</button>
@@ -65,8 +73,8 @@
         
         <div class="p-archive__container">
           <!-- テンプレート -->
-          <template id="card">
-            <li>
+          <template class="js-card">
+            <li tabindex="0">
               <a href="#" class="c-link--none">
                 <archive class="p-card">
                   <div class="p-card__header">
@@ -83,19 +91,19 @@
             </li>
           </template>
 
-          <section id="static-contents" class="p-archive js-archiveList is-open" role="tabpanel" aria-labelledby="tab-static" tabindex="0">          
-              <ul id="cardList-static" class="p-archive__list"></ul>
-          </section>
+          <div id="static-contents" class="p-archive js-archiveList is-open" role="tabpanel" aria-labelledby="tab-static" tabindex="0">          
+              <ul class="p-archive__list js-static"></ul>
+          </div>
 
-          <section id="dynamic-contents" class="p-archive js-archiveList" role="tabpanel" aria-labelledby="tab-dynamic" tabindex="0">
-            <ul id="cardList-dynamic" class="p-archive__list"></ul>
-          </section>          
+          <div id="dynamic-contents" class="p-archive js-archiveList" role="tabpanel" aria-labelledby="tab-dynamic" tabindex="0">
+            <ul id="cardList-dynamic" class="p-archive__list js-dynamic"></ul>
+          </div>          
         </div>
       </section>
 
       <section id="skills" class="p-skills">
-        <h2 class="c-sectionTitle">スキル</h2>
-        <dl class="p-skills__list">
+        <h2 class="c-sectionTitle" tabindex="0">スキル</h2>
+        <dl class="p-skills__list" aria-label="スキルリスト" tabindex="0">
           <div class="p-skill">
             <div class="p-skill__desc">
               <dt>HTML5</dt>
@@ -155,8 +163,8 @@
         </dl>
       </section>
 
-      <section id="about" class="p-about">
-        <h2 class="c-sectionTitle">自己紹介</h2>
+      <section id="about" class="p-about" tabindex="0">
+        <h2 class="c-sectionTitle" tabindex="0">自己紹介</h2>
         <div class="p-about__body">
           <div class="p-about__image">
             <img src="images/about_avatar.jpg" alt="自分の写真" class="p-about__avatar">
