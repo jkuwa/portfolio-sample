@@ -34,7 +34,6 @@ button:hover {
 a:focus-visible,
 button:focus-visible {
   outline: 3px solid #384D98;
-  outline-offset: 0;
 }
 
 .roboto-regular {
@@ -210,6 +209,7 @@ ul {
   }
   .p-nav__item:hover, .p-nav__item:focus-visible {
     background: rgba(0, 0, 0, 0.1);
+    outline-offset: -3px;
   }
 }
 .p-nav__inquiry {
@@ -532,18 +532,21 @@ body.is-open {
 }
 
 .p-card {
+  width: 100%;
+}
+.p-card__link {
   padding-bottom: 46px;
   width: 100%;
   display: block;
 }
 @media (min-width: 768px) {
-  .p-card {
+  .p-card__link {
     padding-bottom: 0;
   }
 }
-.p-card:hover {
+.p-card__link:hover, .p-card__link:focus-visible {
   background: rgba(0, 0, 0, 0.1);
-  transition: all 0.3s;
+  transition: background 0.3s;
 }
 .p-card__header {
   display: flex;

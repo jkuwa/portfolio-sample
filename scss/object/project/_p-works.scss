@@ -86,17 +86,22 @@
 }
 
 .p-card {
-  padding-bottom: 46px;
   width: 100%;
-  display: block;
 
-  @include m.breakpoint(tablet) {
-    padding-bottom: 0;
-  }
+  &__link {
+    padding-bottom: 46px;
+    width: 100%;
+    display: block;
 
-  &:hover {
-    background: rgba(0 0 0 /.1);
-    transition: all .3s;
+    @include m.breakpoint(tablet) {
+      padding-bottom: 0;
+    }
+
+    &:hover,
+    &:focus-visible {
+      background: rgba(0 0 0 /.1);
+      transition: background .3s;
+    }
   }
 
   &__header {
