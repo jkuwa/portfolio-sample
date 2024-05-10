@@ -34,7 +34,7 @@ button:hover {
 a:focus-visible,
 button:focus-visible {
   outline: 3px solid #384D98;
-  outline-offset: -3px;
+  outline-offset: 0;
 }
 
 .roboto-regular {
@@ -176,6 +176,7 @@ ul {
     position: static;
     transform: translateX(0);
     transition: unset;
+    overflow-x: visible;
   }
 }
 .p-nav.is-open {
@@ -292,6 +293,9 @@ body.is-open {
 .p-mv__slider {
   opacity: 0;
   transition: opacity 0.5s;
+}
+.p-mv__slider *:focus-visible {
+  overflow-y: visible;
 }
 .p-mv__slider.slick-initialized {
   opacity: 1;

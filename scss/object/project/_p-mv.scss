@@ -6,7 +6,7 @@
   position: relative;
 
   *:focus-visible {
-  outline: 3px solid v.$outLine-lite;
+    outline: 3px solid v.$outLine-lite;
   }
 
   // ローディング中に画像が縦並びになるのを隠す
