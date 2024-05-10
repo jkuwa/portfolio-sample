@@ -17,15 +17,14 @@
 <body>
   <header class="l-header p-header">
     <div class="p-header__inner">
-      <a href="index.html" class="p-header__title" aria-label="サイトタイトル">
+      <div class="p-header__title" tabindex="0">
         <p class="p-title--sp">Hasegawa Web</p>
         <p class="p-title--pc">ポートフォリオ</p>
-        <span class="u-hidden">ホームに戻る</span>
-      </a>
+      </div>
       <button class="p-hamburgerBtn js-hamburger" type="button" aria-expanded="false" aria-controls="nav"><span class="u-hidden js-hamburgerBar">メニューを開く</span></button>
 
-      <nav id="nav" class="p-nav js-nav">
-        <ul class="p-nav__list" tabindex="0">
+      <nav id="nav" class="p-nav js-nav" tabindex="0">
+        <ul class="p-nav__list">
           <li><a href="index.html" class="p-nav__item">ホーム</a></li>
           <li><a href="#about" class="p-nav__item">自己紹介</a></li>
           <li><a href="#works" class="p-nav__item">制作実績</a></li>
