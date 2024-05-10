@@ -294,9 +294,6 @@ body.is-open {
   opacity: 0;
   transition: opacity 0.5s;
 }
-.p-mv__slider *:focus-visible {
-  overflow-y: visible;
-}
 .p-mv__slider.slick-initialized {
   opacity: 1;
 }
@@ -326,20 +323,19 @@ body.is-open {
   color: #fff;
   text-align: center;
 }
-.p-title p {
+.p-title h1 {
+  margin-top: 16px;
+  font-size: min(11.5vw, 4.8rem);
+}
+.p-title__sub {
   font-family: "Roboto", sans-serif;
   font-size: min(5.6vw, 2.4rem);
   line-height: 1;
   font-weight: 700;
   font-style: normal;
 }
-.p-title h1 {
+.p-title__copy {
   margin-top: 16px;
-  font-size: min(11.5vw, 4.8rem);
-}
-.p-title h1 span {
-  margin-top: 16px;
-  display: block;
   font-size: 1.6rem;
   font-weight: 400;
 }
