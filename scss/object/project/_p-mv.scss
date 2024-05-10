@@ -5,6 +5,10 @@
 .p-mv {
   position: relative;
 
+  *:focus-visible {
+  outline: 3px solid v.$outLine-lite;
+  }
+
   // ローディング中に画像が縦並びになるのを隠す
   &__slider {
     opacity: 0;
