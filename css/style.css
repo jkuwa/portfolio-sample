@@ -99,6 +99,12 @@ ul {
   background-size: contain;
   background-repeat: no-repeat;
 }
+@media (min-width: 960px) {
+  .c-icon {
+    padding-top: min(30%, 160px);
+    width: 30%;
+  }
+}
 
 .p-header {
   width: 100%;
@@ -593,14 +599,14 @@ body.is-open {
 .p-skill__desc {
   flex: 1;
 }
-.p-skill__desc dt {
+.p-skill__desc h3 {
   font-family: "Roboto", sans-serif;
   font-size: 2.4rem;
   line-height: 2;
   font-weight: 700;
   font-style: normal;
 }
-.p-skill__desc dd {
+.p-skill__desc p {
   margin-top: 8px;
   color: #333333;
 }
